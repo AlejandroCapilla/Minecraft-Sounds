@@ -14,6 +14,9 @@ class CustomAdapterMainFolders(private val dataSet: Array<String>) :
 
         init {
             textView = view.findViewById(R.id.txtMainFolders)
+            textView.setOnClickListener {
+
+            }
         }
     }
 
@@ -30,7 +33,4 @@ class CustomAdapterMainFolders(private val dataSet: Array<String>) :
     }
 
     override fun getItemCount() = dataSet.size
-
-    }
-
 }
