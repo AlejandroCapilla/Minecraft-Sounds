@@ -13,39 +13,36 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btnMusic"
             android:scaleType="fitCenter"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/img_music_disc"/>
+            android:src="@drawable/img_music_disc"
+            android:contentDescription="@string/music"/>
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnAmbient"
             android:scaleType="fitCenter"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/img_ambient"/>
+            android:src="@drawable/img_ambient"
+            android:contentDescription="@string/ambient"/>
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btnHostileMobs"
             android:scaleType="fitCenter"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/img_hostile_mobs" />
+            android:src="@drawable/img_hostile_mobs"
+            android:contentDescription="@string/hostile_mobs"/>
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/btnPacificMobs"
             android:scaleType="fitCenter"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/img_pasive_mobs" />
-
-        <ImageButton
-            android:id="@+id/imageButton5"
-            android:scaleType="fitCenter"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/img_ambient" />
+            android:src="@drawable/img_pasive_mobs"
+            android:contentDescription="@string/pacific_mobs"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
