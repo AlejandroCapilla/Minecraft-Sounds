@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class FragmentSoundLibrary : Fragment(), View.OnClickListener{
 
-    private var array: Array<String> = arrayOf("Sound effects", "Soundtracks")
+    private var array: Array<String> = arrayOf("Calm1", "Calm2", "Calm3", "Hal1", "Hal2", "Hal3", "Hal4")
     private var adapter: CustomAdapterMainFolders = CustomAdapterMainFolders(array)
     private lateinit var recyclerView: RecyclerView
 
@@ -50,7 +50,7 @@ class FragmentSoundLibrary : Fragment(), View.OnClickListener{
     override fun onClick(v: View?) {
         when(v?.id) {
             R.id.btnMusic -> {
-                array = arrayOf("Soundtrack 1", "Soundtrack 2")
+                array = arrayOf("Calm1", "Calm2", "Calm3", "Hal1", "Hal2", "Hal3", "Hal4")
             }
             R.id.btnAmbient -> {
                 array = arrayOf("Ambient 1", "Ambient 2")
@@ -65,4 +65,5 @@ class FragmentSoundLibrary : Fragment(), View.OnClickListener{
         adapter = CustomAdapterMainFolders(array)
         recyclerView.adapter = adapter
     }
+
 }
