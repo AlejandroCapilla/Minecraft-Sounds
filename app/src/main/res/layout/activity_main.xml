@@ -8,12 +8,6 @@
     tools:context=".MainActivity">
 
     <fragment
-        android:id="@+id/FActiveSounds"
-        android:name="com.example.minecraftsounds.FragmentActiveSounds"
-        android:layout_width="match_parent"
-        android:layout_height="250dp" />
-
-    <fragment
         android:id="@+id/FSoundsLibrary"
         android:name="com.example.minecraftsounds.FragmentSoundLibrary"
         android:layout_width="match_parent"

@@ -1,5 +1,7 @@
 package com.example.minecraftsounds
 
+import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,12 +12,22 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.lang.ClassCastException
 
 class FragmentSoundLibrary : Fragment(), View.OnClickListener{
 
+    var listener: OnItemSelectedListener? = null
     private var array: Array<String> = arrayOf("Calm1", "Calm2", "Calm3", "Hal1", "Hal2", "Hal3", "Hal4")
     private var adapter: CustomAdapterMainFolders = CustomAdapterMainFolders(array)
     private lateinit var recyclerView: RecyclerView
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = context as? OnItemSelectedListener
+        if (listener == null) {
+            throw ClassCastException("$context must implement OnArticleSelectedListener")
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,9 +63,11 @@ class FragmentSoundLibrary : Fragment(), View.OnClickListener{
         when(v?.id) {
             R.id.btnMusic -> {
                 array = arrayOf("Calm1", "Calm2", "Calm3", "Hal1", "Hal2", "Hal3", "Hal4")
+                listener?.onItemSelected("music")
             }
             R.id.btnAmbient -> {
                 array = arrayOf("Ambient 1", "Ambient 2")
+                listener?.onItemSelected("ambient")
             }
             R.id.btnHostileMobs -> {
                 array = arrayOf("HMob 1", "HMob 2")
@@ -66,4 +80,7 @@ class FragmentSoundLibrary : Fragment(), View.OnClickListener{
         recyclerView.adapter = adapter
     }
 
+    interface OnItemSelectedListener {
+        fun onItemSelected(itemName: String)
+    }
 }
